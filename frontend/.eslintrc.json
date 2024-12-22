@@ -1,0 +1,74 @@
+{
+  "root": true,
+  "extends": [
+    "eslint:recommended",
+    "next/core-web-vitals",
+    "next",
+    "next/typescript",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:storybook/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": { "project": true, "tsconfigRootDir": "./" },
+  "plugins": ["jsx-a11y", "@typescript-eslint", "prettier"],
+  "ignorePatterns": ["dist", "node_modules", "vite.config.ts"],
+  "rules": {
+    "@typescript-eslint/consistent-type-imports": [
+      "error",
+      { "fixStyle": "separate-type-imports" }
+    ],
+    "@typescript-eslint/no-restricted-imports": "off",
+    "@typescript-eslint/promise-function-async": [
+      "error",
+      { "checkArrowFunctions": false }
+    ],
+    "curly": ["error", "all"],
+    "prefer-const": "error",
+    "no-var": "error",
+    "no-shadow-restricted-names": "error",
+    "padding-line-between-statements": [
+      "error",
+      { "blankLine": "always", "prev": "block-like", "next": "*" },
+      { "blankLine": "always", "prev": "*", "next": "block-like" },
+      { "blankLine": "always", "prev": "*", "next": "return" },
+      { "blankLine": "always", "prev": ["const", "let", "var"], "next": "*" },
+      { "blankLine": "always", "prev": "*", "next": ["const", "let", "var"] },
+      {
+        "blankLine": "any",
+        "prev": ["const", "let", "var"],
+        "next": ["const", "let", "var"]
+      }
+    ],
+    "react-hooks/rules-of-hooks": "error",
+    "react/prop-types": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        "semi": true,
+        "endOfLine": "auto"
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["*.{ts,tsx,js,jsx}"],
+      "rules": {
+        "react/react-in-jsx-scope": "off"
+      }
+    },
+    {
+      "files": ["*{test,spec}.{t,j}s?(x)"],
+      "env": {
+        "jest": true
+      }
+    }
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}
