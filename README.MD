@@ -27,7 +27,7 @@
 ### Запуск и настройка
 1. Склонируйте репозиторий: 
     ```bash
-    git clone [https://github.com/DaryaVorontsova/Blog-platform.git](https://github.com/DaryaVorontsova/Blog-platform.git)
+    git clone https://github.com/DaryaVorontsova/Blog-platform.git
     ```
 
 2. **Запуск Docker контейнера**. Убедитесь, что Docker установлен, перейдите в папку `backend` и выполните:
